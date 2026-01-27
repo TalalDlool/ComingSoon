@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #111;
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 15px;
+        }
+
+header {
+    position: relative; /* مهم لاحتواء الـ pseudo-element */
+    padding: 15px 15px;
+    border-radius: 50px;
+    background: #222;
+    display: flex;
+    justify-content: space-between; /* للحفاظ على توزيع العناصر */
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    z-index: 1; /* العناصر فوق الـ border الوهمي */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 50px;
+    padding: 3px; /* سمك الحد */
+    background: linear-gradient(90deg, rgba(255,0,150,1), rgba(0,204,255,1));
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 0; /* خلف العناصر */
+}
+
+        .logo {
+            font-size: 40px;
+            font-weight: 600;
+        }
+        .logo-img {
+            height: 35px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+        }
+
+ .app-store-btn {
+    margin-top: 30px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 13px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center; /* لتوسيط المحتويات عموديًا */
+    justify-content: center; /* لتوسيط المحتويات أفقيًا */
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+    max-width: 300px;
+}
+
+        .app-store-btn img {
+            height: 45px;
+            margin-right: 10px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .app-store-btn img:hover {
+            transform: scale(1.3);
+        }
+
+        .app-store-btn .button-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .app-store-btn .coming-soon-text {
+            color: #888;
+            margin-bottom: 3px;
+        }
+
+        .app-store-btn .app-store-text {
+            color: #fff;
+        }
+
+        .main-content {
+            margin-top: 70px;
+        }
+
+        .coming-soon {
+            font-size: 60px;
+            font-weight: 700;
+            color: #fff;
+            background: linear-gradient(90deg, rgba(255,0,150,1) 0%, rgba(0,204,255,1) 100%);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 40px;
+        }
+
+        .main-content p {
+            font-size: 16px;
+            
+            color: #aaa;
+        }
+
+        form {
+            display: flex;
+            justify-content: center; /* Center the button horizontally */
+            align-items: center; /* Center the content vertically */
+            flex-direction: column; /* Stack the elements */
+            gap: 20px;
+        }
+
+        form input {
+            margin-top: 5px;
+            padding: 12px;
+            font-size: 16px;
+            width: 80%;
+            max-width: 265px;
+            margin-right: 5px;
+            border: 2px solid #333;
+            background: #222;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .note {
+            font-size: 14px;
+            color: #aaa;
+            margin-top: 10px;
+        }
+
+        footer {
+            padding-top: 10px;
+            border-top: 1px solid #333;
+            margin-top: 100px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer .socials a {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        footer .socials a:hover {
+            color: #fff;
+        }
+
+        .coming-soon-text {
+            color: #888;
+        }
+
+        .app-store-text {
+            color: #fff;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1024px) {
+            .logo {
+                font-size: 30px;
+            }
+
+            .app-store-btn {
+                max-width: 260px;
+            }
+
+            .coming-soon {
+                font-size: 50px;
+            }
+
+            .main-content p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 15px;
+            }
+
+            .app-store-btn {
+                width: 100%;
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            .app-store-btn img {
+                height: 40px;
+            }
+
+            .coming-soon {
+                font-size: 40px;
+            }
+
+            form input {
+                width: 100%;
+            }
+
+            header {
+                justify-content: center;
+                gap: 10px; /* Center the logo and button on small screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 28px;
+            }
+
+            .coming-soon {
+                font-size: 36px;
+            }
+
+            .app-store-btn {
+                font-size: 12px;
+                padding: 10px;
+            }
+
+            .app-store-btn img {
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="/images/logo.png" class="logo-img">
+            <div class="logo">TD Games</div>
+            <!-- Removed the app-store-btn from header -->
+        </header>
+
+        <section class="main-content">
+            <h1 class="coming-soon">Coming Soon</h1>
+            <p>We are working hard behind the scenes to bring you something extraordinary. Your patience will be rewarded very soon.</p>
+
+            <!-- Place the app-store-btn here in place of the Notify Me button -->
+            <form>
+                <button class="app-store-btn">
+                    <img src="https://images.icon-icons.com/2407/PNG/512/itch_icon_146025.png" alt="App Store">
+                    <div class="button-text">
+                        <span class="coming-soon-text">Coming Soon on</span>
+                        <span class="app-store-text">Itch.io</span>
+                    </div>
+                </button>
+            <p class="note">Notify me when Game is launched</p>
+              <input type="email" placeholder="Please enter your email address">
+         </form>
+        </section>
+
+        <footer>
+            <p class="privacy">Copyright TDGames 2026</p>
+            <div class="socials">
+                <a href="https://www.facebook.com/TalalDaloul2009">Facebook</a> /
+                <a href="https://www.instagram.com/talal_dalloul">Instagram</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
