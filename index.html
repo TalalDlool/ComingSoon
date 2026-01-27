@@ -55,7 +55,7 @@ header::before {
 }
 
         .logo {
-            font-size: 40px;
+            font-size: 30px;
             font-weight: 600;
         }
         .logo-img {
@@ -69,6 +69,7 @@ header::before {
         }
 
  .app-store-btn {
+    text-decoration: none;
     margin-top: 30px;
     background-color: #333;
     color: #fff;
@@ -253,7 +254,7 @@ header::before {
 <body>
     <div class="container">
         <header>
-            <img src="/images/logo.png" class="logo-img">
+            <img src="images/logo.png" class="logo-img">
             <div class="logo">TD Games</div>
             <!-- Removed the app-store-btn from header -->
         </header>
@@ -264,13 +265,13 @@ header::before {
 
             <!-- Place the app-store-btn here in place of the Notify Me button -->
             <form>
-                <button class="app-store-btn">
-                    <img src="https://images.icon-icons.com/2407/PNG/512/itch_icon_146025.png" alt="App Store">
-                    <div class="button-text">
-                        <span class="coming-soon-text">Coming Soon on</span>
-                        <span class="app-store-text">Itch.io</span>
-                    </div>
-                </button>
+                <a href="https://talal2010.itch.io" target="_blank" class="app-store-btn">
+    <img src="https://images.icon-icons.com/2407/PNG/512/itch_icon_146025.png" alt="App Store">
+    <div class="button-text">
+        <span class="coming-soon-text">Coming Soon on</span>
+        <span class="app-store-text">Itch.io</span>
+    </div>
+</a>
             <p class="note">Notify me when Game is launched</p>
               <input type="email" placeholder="Please enter your email address">
          </form>
